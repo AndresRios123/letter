@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Amor ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .flower-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .flower {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            position: relative;
+            animation: sway 3s ease-in-out infinite;
+        }
+        
+        @keyframes sway {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+        
+        .petal {
+            width: 30px;
+            height: 50px;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: absolute;
+            transform-origin: center bottom;
+            animation: bloom 2s ease-out;
+        }
+        
+        @keyframes bloom {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1) rotate(var(--rotation));
+                opacity: 1;
+            }
+        }
+        
+        .petal:nth-child(1) { --rotation: 0deg; top: 20px; left: 45px; }
+        .petal:nth-child(2) { --rotation: 45deg; top: 30px; left: 65px; }
+        .petal:nth-child(3) { --rotation: 90deg; top: 50px; left: 70px; }
+        .petal:nth-child(4) { --rotation: 135deg; top: 70px; left: 65px; }
+        .petal:nth-child(5) { --rotation: 180deg; top: 80px; left: 45px; }
+        .petal:nth-child(6) { --rotation: 225deg; top: 70px; left: 25px; }
+        .petal:nth-child(7) { --rotation: 270deg; top: 50px; left: 20px; }
+        .petal:nth-child(8) { --rotation: 315deg; top: 30px; left: 25px; }
+        
+        .flower-center {
+            width: 25px;
+            height: 25px;
+            background: radial-gradient(circle, #ffeb3b, #ff9800);
+            border-radius: 50%;
+            position: absolute;
+            top: 47px;
+            left: 47px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px rgba(255, 235, 59, 0.5); }
+            100% { box-shadow: 0 0 20px rgba(255, 235, 59, 0.8); }
+        }
+        
+        .stem {
+            width: 4px;
+            height: 60px;
+            background: linear-gradient(to bottom, #4caf50, #2e7d32);
+            margin: 0 auto;
+            border-radius: 2px;
+            position: relative;
+        }
+        
+        .leaf {
+            width: 15px;
+            height: 25px;
+            background: linear-gradient(45deg, #4caf50, #66bb6a);
+            border-radius: 0 100% 0 100%;
+            position: absolute;
+            top: 20px;
+            right: -10px;
+            animation: leafGrow 1.5s ease-out 1s both;
+        }
+        
+        @keyframes leafGrow {
+            0% { transform: scale(0) rotate(-45deg); }
+            100% { transform: scale(1) rotate(-45deg); }
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3em;
+            color: #c2185b;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: heartbeat 2s ease-in-out infinite;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .letter {
+            background: linear-gradient(145deg, #fff 0%, #f8f9fa 100%);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #ff6b6b;
+            animation: slideIn 1.5s ease-out 0.5s both;
+        }
+        
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .letter p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .letter .greeting {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+            color: #c2185b;
+            font-weight: 700;
+        }
+        
+        .signature {
+            text-align: right;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.4em;
+            color: #c2185b;
+            margin-top: 30px;
+            font-weight: 600;
+        }
+        
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 9999;
+        }
+        
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff6b6b;
+            transform: rotate(45deg);
+            animation: float 6s linear infinite;
+            z-index: 10000;
+        }
+        
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff6b6b;
+            border-radius: 50%;
+        }
+        
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+        
+        .heart::after {
+            top: 0;
+            left: -10px;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(110vh) rotate(45deg) scale(0);
+                opacity: 0;
+            }
+            5% {
+                opacity: 1;
+                transform: translateY(105vh) rotate(45deg) scale(1);
+            }
+            95% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) rotate(45deg) scale(1);
+                opacity: 0;
+            }
+        }
+        
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .love-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            font-family: 'Poppins', sans-serif;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .love-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+        }
+        
+        .love-btn:disabled {
+            opacity: 0.8;
+            cursor: not-allowed;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 20px;
+            }
+            
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .letter {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    
+    <div class="container">
+        <div class="flower-container">
+            <div class="flower">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="flower-center"></div>
+            </div>
+            <div class="stem">
+                <div class="leaf"></div>
+            </div>
+        </div>
+        
+        <h1>¡Feliz Cumpleaños Mi Pelioncita!</h1>
+        
+        <div class="letter">
+            
+            <p>Hoy es un día muy especial porque celebramos tu vida, y no sabes la felicidad que me da estar contigo para hacerlo. Desde que te conocí, todo cambió dentro de mí: me diste nuevas metas, nuevos sueños y un motivo enorme para sonreír cada día. Tú llegaste como un rayo de luz y transformaste mi mundo.</p>
+            
+            <p>Feliz cumpleaños, mi vida hermosa. De verdad estoy agradecido con la vida y con tus padres por haberte traído a este mundo jsjs, porque sin ellos yo no habría tenido la fortuna de conocerte. Desde la primera vez que te vi quedé encantado, aunque debo decir que casi me matas del susto cuando apareciste de la nada y me saludaste. Ese momento nunca lo olvido, porque aunque me asustaste, también me robaste el corazón.</p>
+            
+            <p>Eres la persona que siempre está en mi mente, en mis pensamientos, en mis planes y en mis sueños. No hay un solo día en el que no piense en ti, en lo afortunado que soy de tenerte y en lo mucho que deseo seguir construyendo momentos a tu lado. Porque contigo quiero todo: quiero reír, soñar, crecer y compartir cada instante.</p>
+            
+            <p>Te amo con todo mi ser, con cada latido de mi corazón. Gracias por existir, por ser quien eres y por darme tanto amor y felicidad. Eres mi regalo más grande, y hoy, en tu cumpleaños, solo quiero recordarte que mi vida no sería la misma sin ti.</p>
+            
+            <p>Con todo mi amor,<br>Tu novio que te ama.</p>
+        </div>
+        
+        <div class="btn-container">
+            <button class="love-btn" onclick="createManyHearts()">💕 ¡Así de mucho te amo! 💕</button>
+        </div>
+    </div>
+    
+    <script>
+        function createManyHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            const button = document.querySelector('.love-btn');
+            
+            // Cambiar el texto del botón temporalmente
+            const originalText = button.textContent;
+            button.textContent = '💕 ¡Te amo infinitamente! 💕';
+            button.disabled = true;
+            
+            // Crear muchos corazones durante 3 segundos
+            const interval = setInterval(() => {
+                // Crear múltiples corazones por cada intervalo
+                for (let i = 0; i < 12; i++) {
+                    setTimeout(() => {
+                        const heart = document.createElement('div');
+                        heart.className = 'heart';
+                        heart.style.left = Math.random() * 100 + 'vw';
+                        heart.style.animationDelay = '0s';
+                        heart.style.animationDuration = (Math.random() * 1.5 + 3) + 's';
+                        
+                        // Variar el tamaño de los corazones
+                        const scale = 0.4 + Math.random() * 1.2;
+                        heart.style.setProperty('--scale', scale);
+                        heart.style.transform = `translateY(110vh) rotate(45deg) scale(0)`;
+                        
+                        heartsContainer.appendChild(heart);
+                        
+                        // Iniciar la animación inmediatamente
+                        requestAnimationFrame(() => {
+                            heart.style.animation = `float ${heart.style.animationDuration} linear forwards`;
+                        });
+                        
+                        // Remover el corazón después de la animación
+                        setTimeout(() => {
+                            if (heart.parentNode) {
+                                heart.remove();
+                            }
+                        }, 5000);
+                    }, i * 25);
+                }
+            }, 200);
+            
+            // Detener después de 5 segundos y restaurar el botón
+            setTimeout(() => {
+                clearInterval(interval);
+                button.textContent = originalText;
+                button.disabled = false;
+            }, 5000);
+        }
+        
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            
+            for (let i = 0; i < 6; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.animationDelay = '0s';
+                    heart.style.animationDuration = (Math.random() * 2 + 4) + 's';
+                    
+                    // Posición inicial fuera de la pantalla por abajo
+                    heart.style.transform = `translateY(110vh) rotate(45deg) scale(0)`;
+                    
+                    heartsContainer.appendChild(heart);
+                    
+                    // Iniciar la animación inmediatamente
+                    requestAnimationFrame(() => {
+                        heart.style.animation = `float ${heart.style.animationDuration} linear forwards`;
+                    });
+                    
+                    setTimeout(() => {
+                        if (heart.parentNode) {
+                            heart.remove();
+                        }
+                    }, 7000);
+                }, i * 500);
+            }
+        }
+        
+        // Crear corazones automáticamente cada cierto tiempo (menos frecuente)
+        setInterval(createHearts, 15000);
+        
+        // Efecto de parallax suave
+        document.addEventListener('mousemove', (e) => {
+            const flower = document.querySelector('.flower');
+            const x = (e.clientX / window.innerWidth) * 10;
+            const y = (e.clientY / window.innerHeight) * 10;
+            
+            flower.style.transform = `translate(${x}px, ${y}px) rotate(${Math.sin(Date.now() * 0.001) * 5}deg)`;
+        });
+        
+        // Efecto de entrada suave
+        window.addEventListener('load', () => {
+            setTimeout(createHearts, 2000);
+        });
+    </script>
+</body>
+</html>
